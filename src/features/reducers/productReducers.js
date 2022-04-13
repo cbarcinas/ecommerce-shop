@@ -1,15 +1,20 @@
 // import actions
 import { ActionTypes } from "../actions/productsActions";
 
-// set state
+// set initial state
 const initialState = {
-  products: [],
+  products: [
+    {
+      id: 1,
+      title: "craig",
+      category: "developer",
+    },
+  ],
 };
 
 // create reducers
-
-export const productsReducers = (state = initialState, { type, payload }) => {
-  // alt: (state = initialState, action)
+export const productReducers = (state = initialState, { type, payload }) => {
+  // default: (state = initialState, action)
   // since we know that we need type & payload from action, we can destructure them
   // i.e (state = initialState, { type, payload })
   switch (type) {
