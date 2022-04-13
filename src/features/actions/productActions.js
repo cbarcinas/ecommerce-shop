@@ -5,7 +5,7 @@ export const ActionTypes = {
   REMOVE_SELECTED_PRODUCT: "REMOVE_SELECTED_PRODUCT",
 };
 
-// Action Creators
+// create action creators
 export const setProducts = (products) => {
   return {
     type: ActionTypes.SET_PRODUCTS,
