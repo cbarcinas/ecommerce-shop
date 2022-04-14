@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-
 import productsReducer from "../features/productsSlice";
 
 export default configureStore({
@@ -7,3 +6,4 @@ export default configureStore({
     products: productsReducer,
   },
 });
+
