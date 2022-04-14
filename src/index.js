@@ -4,7 +4,6 @@ import App from "./App";
 
 // connect redux
 import { Provider } from "react-redux";
-import store from "./features/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
