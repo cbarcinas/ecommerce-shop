@@ -16,7 +16,7 @@ export const productsSlice = createSlice({
       return { ...state, products: [...action.payload] };
     },
     selectedProduct: (state, action) => {
-      return { ...state };
+      return { ...state, ...action.payload };
     },
   },
 });
