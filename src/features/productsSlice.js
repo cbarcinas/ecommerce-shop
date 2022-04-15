@@ -6,8 +6,13 @@ export const productsSlice = createSlice({
     products: [
       {
         id: 1,
-        name: "craig",
-        category: "developer",
+        name: "Craig",
+        category: "Software Engineer",
+      },
+      {
+        id: 2,
+        name: "John",
+        category: "UI Designer",
       },
     ],
   },
