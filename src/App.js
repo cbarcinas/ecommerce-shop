@@ -6,7 +6,7 @@ import ProductDetails from "./components/ProductDetails";
 
 function App() {
   return (
-    <div className="app">
+    <div className="App">
       <Router>
         <Header />
         <Routes>

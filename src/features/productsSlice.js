@@ -9,11 +9,6 @@ export const productsSlice = createSlice({
         name: "Craig",
         category: "Software Engineer",
       },
-      {
-        id: 2,
-        name: "John",
-        category: "UI Designer",
-      },
     ],
   },
   reducers: {
