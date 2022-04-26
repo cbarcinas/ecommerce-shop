@@ -19,6 +19,7 @@ const ProductListing = () => {
     // log our response to verify that we are getting our products
     console.log(res.data);
     // We are dispatching our response to the redux store
+    // to update the state of setProducts
     dispatch(setProducts(res.data));
   };
 
