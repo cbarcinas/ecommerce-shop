@@ -6,18 +6,19 @@ import ProductComponent from "./ProductComponent";
 const ProductListing = () => {
   const products = useSelector((state) => state);
 
-  // fetch all products using async
+  // Create our async function using axios to
+  // grab a list of products from an api
   const fetchProducts = async () => {
     const res = await axios
       .get("https://fakestoreapi.com/products")
       .catch((err) => {
-        console.log("err", err);
+        console.log(err);
       });
     // log our response to verify that we are getting our products
     console.log(res);
   };
 
-  // create our useEffect to run our fetchProdcuts func
+  // Create our useEffect to run our fetchProducts() async func
   useEffect(() => {
     fetchProducts();
   }, []);
