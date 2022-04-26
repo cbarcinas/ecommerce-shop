@@ -3,9 +3,10 @@ import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
   // import our products state
-  const products = useSelector((state) => state.products.setProducts);
+  const products = useSelector((state) => state.setProducts);
+
   // create a variable containing our map function to pass into our jsx
-  const renderList = products.map((product) => {
+  const renderList = products.setProducts.map((product) => {
     const { id, title, image, price, category } = product;
     return (
       <div className="four column wide" key={id}>
@@ -24,7 +25,7 @@ const ProductComponent = () => {
       </div>
     );
   });
-
+  // return map inside our jsx
   return <>{renderList}</>;
 };
 
