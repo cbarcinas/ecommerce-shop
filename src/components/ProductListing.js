@@ -5,7 +5,8 @@ import { setProducts } from "../features/productsSlice";
 import ProductComponent from "./ProductComponent";
 
 const ProductListing = () => {
-  const products = useSelector((state) => state.setProducts);
+  // import our products state from our redux store
+  const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
   // Create our async function using axios to
