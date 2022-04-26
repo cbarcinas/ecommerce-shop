@@ -5,7 +5,7 @@ import { setProducts } from "../features/productsSlice";
 import ProductComponent from "./ProductComponent";
 
 const ProductListing = () => {
-  const products = useSelector((state) => state.products.setProducts);
+  const products = useSelector((state) => state.setProducts);
   const dispatch = useDispatch();
 
   // Create our async function using axios to
