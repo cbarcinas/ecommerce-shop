@@ -5,7 +5,7 @@ import { setProducts } from "../features/productsSlice";
 import ProductComponent from "./ProductComponent";
 
 const ProductListing = () => {
-  // import our products state from our redux store
+  // Import our products state from our redux store
   const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
 
@@ -17,7 +17,7 @@ const ProductListing = () => {
       .catch((err) => {
         console.log(err);
       });
-    // log our response to verify that we are getting our products
+    // Log our response to verify that we are getting our products
     console.log(res.data);
     // We are dispatching our response to the redux store
     // to update the state of setProducts

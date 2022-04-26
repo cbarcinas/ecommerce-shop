@@ -2,10 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
-  // import our products state from our redux store
+  // Import our products state from our redux store
   const products = useSelector((state) => state.allProducts.products);
 
-  // create a variable containing our map function to pass into our jsx
+  // Create a variable containing our map function to pass into our jsx
   const renderList = products.map((product) => {
     const { id, title, image, price, category } = product;
     return (
@@ -25,7 +25,7 @@ const ProductComponent = () => {
       </div>
     );
   });
-  // return map inside our jsx
+  // Return map inside our jsx
   return <>{renderList}</>;
 };
 
