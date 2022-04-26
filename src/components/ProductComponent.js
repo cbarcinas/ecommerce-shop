@@ -2,11 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const ProductComponent = () => {
-  // import our products state
-  const products = useSelector((state) => state.setProducts);
+  // import our products state from our redux store
+  const products = useSelector((state) => state.allProducts.products);
 
   // create a variable containing our map function to pass into our jsx
-  const renderList = products.setProducts.map((product) => {
+  const renderList = products.map((product) => {
     const { id, title, image, price, category } = product;
     return (
       <div className="four column wide" key={id}>
