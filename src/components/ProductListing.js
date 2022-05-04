@@ -12,16 +12,16 @@ const ProductListing = () => {
   // Create our async function using axios to
   // grab a list of products from an api
   const fetchProducts = async () => {
-    const res = await axios
+    const response = await axios
       .get("https://fakestoreapi.com/products")
       .catch((err) => {
         console.log(err);
       });
     // Log our response to verify that we are getting our products
-    console.log(res.data);
+    console.log(response.data);
     // We are dispatching our response to the redux store
     // to update the state of setProducts
-    dispatch(setProducts(res.data));
+    dispatch(setProducts(response.data));
   };
 
   // Create our useEffect to run our fetchProducts() async func
