@@ -16,6 +16,7 @@ export const productsSlice = createSlice({
   },
 });
 
+
 // Export action creators
 export const { setProducts, selectedProduct } = productsSlice.actions;
 
