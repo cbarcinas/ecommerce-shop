@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectedProduct } from "../features/productsSlice";
 
 const ProductDetails = () => {
-  const products = useSelector((state) => state.allProducts.products);
+  const product = useSelector((state) => state.allProducts.products);
 
   // Destructure id from ProductComponent
   const { productId } = useParams();
@@ -13,7 +13,7 @@ const ProductDetails = () => {
 
   const dispatch = useDispatch();
 
-  const fetchProductDetails = async () => {
+  const fetchProductDetail = async () => {
     const response = await axios
       .get(`https://fakestoreapi.com/products/${productId}`)
       .catch((err) => console.log("error", err));
@@ -22,8 +22,8 @@ const ProductDetails = () => {
   };
 
   useEffect(() => {
-    selectedProduct();
-  }, []);
+    if (productId && productId !== "") fetchProductDetail();
+  }, [productId]);
 
   return (
     <div>
