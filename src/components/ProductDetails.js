@@ -2,14 +2,15 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { selectedProduct } from "../features/productsSlice";
+import { selectedProduct } from "../features/selectedProductSlice";
 
 const ProductDetails = () => {
-  const product = useSelector((state) => state.allProducts.products);
+  const product = useSelector((state) => state.product);
+  console.log(product);
 
-  // Destructure id from ProductComponent
+  // Destructure product id from ProductComponent </Link>
   const { productId } = useParams();
-  console.log("product id:", productId);
+  //  console.log("product id:", productId);
   const dispatch = useDispatch();
 
   const fetchProductDetail = async () => {
@@ -20,10 +21,14 @@ const ProductDetails = () => {
 
     // Dispatch the response to the redux store
     dispatch(selectedProduct(response.data));
+
+    // console.log("fetchProductDetail func:", response.data);
   };
 
   useEffect(() => {
-    if (productId && productId !== "") fetchProductDetail();
+    if (productId && productId !== "") {
+      fetchProductDetail();
+    }
   }, [productId]);
 
   return (
@@ -34,3 +39,7 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+// useEffect(() => {
+//   if (productId && productId !== "") fetchProductDetail();
+// }, [productId]);
