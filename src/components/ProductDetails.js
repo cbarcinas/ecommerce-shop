@@ -39,7 +39,3 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
-
-// useEffect(() => {
-//   if (productId && productId !== "") fetchProductDetail();
-// }, [productId]);
