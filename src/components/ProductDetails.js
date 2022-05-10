@@ -8,7 +8,7 @@ const ProductDetails = () => {
   const product = useSelector((state) => state.product);
   console.log(product);
 
-  // Destructure product id from ProductComponent </Link>
+  // Destructure product id from ProductComponent </Link> url
   const { productId } = useParams();
   //  console.log("product id:", productId);
   const dispatch = useDispatch();
