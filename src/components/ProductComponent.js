@@ -11,6 +11,7 @@ const ProductComponent = () => {
     const { id, title, image, price, category } = product;
     return (
       <div className="four wide column" key={id}>
+        {/* useParams will grab id in <ProductDetails/> comp */}
         <Link to={`/product/${id}`}>
           <div className="ui link cards">
             <div className="card">
