@@ -8,11 +8,15 @@ export const selectedProductSlice = createSlice({
     selectedProduct: (state, action) => {
       return { ...state, ...action.payload };
     },
+    removeSelectedProduct: () => {
+      return {};
+    },
   },
 });
 
 // Export action creators
-export const { selectedProduct } = selectedProductSlice.actions;
+export const { selectedProduct, removeSelectedProduct } =
+  selectedProductSlice.actions;
 
 // Export reducer
 export default selectedProductSlice.reducer;
