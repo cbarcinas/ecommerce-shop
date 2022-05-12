@@ -6,6 +6,7 @@ import ProductDetails from "./components/ProductDetails";
 
 function App() {
   return (
+    // Create application routing
     <div className="App">
       <Router>
         <Header />
