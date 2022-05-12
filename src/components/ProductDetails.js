@@ -35,6 +35,9 @@ const ProductDetails = () => {
     if (productId && productId !== "") {
       fetchProductDetail();
     }
+    // Clear our state after component is destroyed,
+    // this prevents previous item from rendering before 
+    // transition to new product detail
     return () => {
       dispatch(removeSelectedProduct());
     };
