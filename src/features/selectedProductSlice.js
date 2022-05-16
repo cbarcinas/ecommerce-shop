@@ -5,9 +5,11 @@ export const selectedProductSlice = createSlice({
   name: "product",
   initialState: {},
   reducers: {
+    // Adding the selected product to state
     selectedProduct: (state, action) => {
       return { ...state, ...action.payload };
     },
+    // Remove the selected product from state
     removeSelectedProduct: () => {
       return {};
     },
