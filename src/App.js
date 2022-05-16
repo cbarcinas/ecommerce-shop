@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<ProductListing />} />
-          {/* productId used by useParams  */}
+          {/* productId used by useParams in <ProductDetails/>  */}
           <Route path="/product/:productId" element={<ProductDetails />} />
           <Route>404 Not Found</Route>
         </Routes>
