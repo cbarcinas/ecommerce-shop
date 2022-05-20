@@ -1,10 +1,18 @@
 import React from "react";
+import { XIcon } from "@heroicons/react/outline";
 
-const HamburgerMenu = () => {
+const HamburgerMenu = (props) => {
+  // Destructure props from <Header/>
+  const { toggleMenu, toggleHamburgerMenu } = props;
+
   return (
-    <div>
-      <h1>im the burger menu</h1>
-    </div>
+    <>
+      {toggleMenu ? (
+        <div>
+          <XIcon className="w-5" onClick={toggleHamburgerMenu} />
+        </div>
+      ) : null}
+    </>
   );
 };
 
