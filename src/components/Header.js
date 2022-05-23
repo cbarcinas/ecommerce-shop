@@ -12,11 +12,10 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full">
-      <header className="max-w-[1440px] m-auto px-[5%] ">
-        <h2 className="text-3xl">EcommCenter</h2>
-        <MenuIcon className="w-5" onClick={toggleHamburgerMenu} />
-        {/* <XIcon className="w-5" /> */}
+    <div className="w-full ">
+      <header className="flex justify-between max-w-[1440px] my-4 px-[5%]">
+        <h2 className="text-2xl">Ecomm</h2>
+        <MenuIcon className="w-5 block" onClick={toggleHamburgerMenu} />
       </header>
       {toggleHamburgerMenu ? (
         <>
