@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { MenuIcon } from "@heroicons/react/outline";
 import HamburgerMenu from "./HamburgerMenu";
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
     <div className="w-full ">
       <header className="flex justify-between max-w-[1440px] my-4 px-[5%]">
         <h2 className="text-2xl">Ecomm</h2>
-        <MenuIcon className="w-5 block" onClick={toggleHamburgerMenu} />
+        <MenuIcon className="w-7 block" onClick={toggleHamburgerMenu} />
       </header>
       {toggleHamburgerMenu ? (
         <>
