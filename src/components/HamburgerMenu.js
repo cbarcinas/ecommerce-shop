@@ -12,21 +12,24 @@ const HamburgerMenu = (props) => {
     <>
       {toggleMenu ? (
         <>
-          <div className="absolute h-screen bg-slate-500 inset-0">
-            <div className="text-white ">
-              <XIcon className="w-7" onClick={toggleHamburgerMenu} />
+          <div className="absolute h-screen bg-slate-700 inset-0">
+            <div className="m-auto text-center text-white text-6xl tracking-wider">
+              <XIcon
+                className="w-9 absolute top-4 right-4"
+                onClick={toggleHamburgerMenu}
+              />
               {/* user icons */}
               <div>
-                <ul>
+                <ul className="mt-[2.5em]">
                   <li>
                     <Link to="/">
-                      <UserCircleIcon className="w-6"></UserCircleIcon>
+                      <UserCircleIcon className="w-9 m-auto my-7"></UserCircleIcon>
                     </Link>
                   </li>
 
                   <li>
-                    <Link to="/">
-                      <ShoppingCartIcon className="w-6"></ShoppingCartIcon>
+                    <Link to="/cart">
+                      <ShoppingCartIcon className="w-9 m-auto my-4"></ShoppingCartIcon>
                     </Link>
                   </li>
                 </ul>
