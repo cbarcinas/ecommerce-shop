@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { MenuIcon } from "@heroicons/react/outline";
+import { ShoppingCartIcon } from "@heroicons/react/outline";
+
 import HamburgerMenu from "./HamburgerMenu";
 
 const Header = () => {
@@ -12,10 +15,20 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full ">
+    <div className="w-full fixed top-0 z-0">
       <header className="flex justify-between max-w-[1440px] my-4 px-[5%]">
-        <h2 className="text-2xl">Ecomm</h2>
-        <MenuIcon className="w-7 block" onClick={toggleHamburgerMenu} />
+        <Link to="/">
+          <h2 className="text-2xl">Ecomm</h2>
+        </Link>
+        <div className="flex">
+          <Link to="/cart">
+            <ShoppingCartIcon className="w-7"></ShoppingCartIcon>
+          </Link>
+          <MenuIcon
+            className="w-7 ml-3 items-center"
+            onClick={toggleHamburgerMenu}
+          />
+        </div>
       </header>
       {toggleHamburgerMenu ? (
         <>
