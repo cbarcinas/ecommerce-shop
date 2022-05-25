@@ -10,19 +10,17 @@ const ProductComponent = () => {
   const renderList = products.map((product) => {
     const { id, title, image, price, category } = product;
     return (
-      <div className="four wide column" key={id}>
+      <div className="" key={id}>
         {/* useParams will grab id in <ProductDetails/> comp */}
         <Link to={`/product/${id}`}>
-          <div className="ui link cards">
-            <div className="card">
-              <div className="image">
-                <img src={image} alt={title} />
-              </div>
-              <div className="content">
-                <div className="header">{title}</div>
-                <div className="meta price">${price}</div>
-                <div className="meta">{category}</div>
-              </div>
+          <div className="">
+            <div className="">
+              <img src={image} alt={title} />
+            </div>
+            <div className="">
+              <div>{title}</div>
+              <div>${price}</div>
+              <div>{category}</div>
             </div>
           </div>
         </Link>
