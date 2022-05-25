@@ -21,7 +21,9 @@ const ProductComponent = () => {
               <p>{title}</p>
               <p>${price}</p>
               <p>{category}</p>
-              <button className="">Add to Cart</button>
+              <button className="mt-3 bg-purple-400 hover:bg-purple-500 font-bold py-2 px-4 border-b-4 border-purple-300  hover:border-purple-500  rounded">
+                Add to Cart
+              </button>
             </div>
           </div>
         </Link>
