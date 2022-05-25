@@ -48,23 +48,19 @@ const ProductDetails = () => {
       {Object.keys(product).length === 0 ? (
         <div>...Loading</div>
       ) : (
-        <div >
-          <div >
-            <div>
-              <div>
-                <img src={image} alt={id} />
-              </div>
-              <div>
-                <h1>{title}</h1>
-                <h2>
-                  <a>${price}</a>
-                </h2>
-                <h3>{category}</h3>
-                <p>{description}</p>
-                {/* animated add to cart button */}
-                <button>Add to Cart</button>
-              </div>
-            </div>
+        <div className="mt-[6em]">
+          <div>
+            <img src={image} alt={id} />
+          </div>
+          <div>
+            <h1>{title}</h1>
+            <h2>
+              <a>${price}</a>
+            </h2>
+            <h3>{category}</h3>
+            <p>{description}</p>
+            {/* animated add to cart button */}
+            <button>Add to Cart</button>
           </div>
         </div>
       )}
