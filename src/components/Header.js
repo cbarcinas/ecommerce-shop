@@ -15,10 +15,10 @@ const Header = () => {
   };
 
   return (
-    <div className="w-full fixed top-0 z-0">
-      <header className="flex justify-between max-w-[1440px] my-4 px-[5%]">
+    <div className="w-full fixed top-0 z-0 bg-slate-300 text-stone-900 ">
+      <header className="flex justify-between max-w-[1440px] my-4 px-[5%] ">
         <Link to="/">
-          <h2 className="text-2xl">Ecomm</h2>
+          <h2 className="text-2xl font-semibold">Ecomm</h2>
         </Link>
         <div className="flex">
           <Link to="/cart">

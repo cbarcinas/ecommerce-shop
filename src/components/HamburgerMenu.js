@@ -12,7 +12,7 @@ const HamburgerMenu = (props) => {
     <>
       {toggleMenu ? (
         <>
-          <div className="absolute h-screen bg-slate-700 inset-0">
+          <div className="absolute h-screen bg-slate-700 inset-0 ">
             <div className="m-auto text-center text-white text-6xl tracking-wider">
               <XIcon
                 className="w-9 absolute top-4 right-4"
