@@ -13,11 +13,11 @@ const ProductComponent = () => {
       <div className="" key={id}>
         {/* useParams will grab id in <ProductDetails/> comp */}
         <Link to={`/product/${id}`}>
-          <div className="">
-            <div className="">
+          <div>
+            <div>
               <img src={image} alt={title} />
             </div>
-            <div className="">
+            <div>
               <div>{title}</div>
               <div>${price}</div>
               <div>{category}</div>
