@@ -11,7 +11,7 @@ const ProductDetails = () => {
   const product = useSelector((state) => state.product);
   console.log(product);
   // Destructure values that we need to display from product
-  const { image, title, price, category, description } = product;
+  const { id, image, title, price, category, description } = product;
 
   // Destructure product id from ProductComponent </Link> url
   // console.log("product id:", productId);
@@ -36,7 +36,7 @@ const ProductDetails = () => {
       fetchProductDetail();
     }
     // Clear our state after component is destroyed,
-    // this prevents previous item from rendering before 
+    // this prevents previous item from rendering before
     // transition to new product detail
     return () => {
       dispatch(removeSelectedProduct());
@@ -44,31 +44,25 @@ const ProductDetails = () => {
   }, [productId]);
 
   return (
-    <div className="ui grid container">
+    <div className="transition duration-50">
       {Object.keys(product).length === 0 ? (
         <div>...Loading</div>
       ) : (
-        <div className="ui placeholder segment">
-          <div className="ui two column stackable center aligned grid">
-            <div className="ui vertical divider">AND</div>
-            <div className="middle aligned row">
-              <div className="column lp">
-                <img className="ui fluid image" src={image} />
+        <div >
+          <div >
+            <div>
+              <div>
+                <img src={image} alt={id} />
               </div>
-              <div className="column rp">
+              <div>
                 <h1>{title}</h1>
                 <h2>
-                  <a className="ui teal tag label">${price}</a>
+                  <a>${price}</a>
                 </h2>
-                <h3 className="ui brown block header">{category}</h3>
+                <h3>{category}</h3>
                 <p>{description}</p>
                 {/* animated add to cart button */}
-                <div className="ui vertical animated button" tabIndex="0">
-                  <div className="hidden content">
-                    <i className="shop icon"></i>
-                  </div>
-                  <div className="visible content">Add to Cart</div>
-                </div>
+                <button>Add to Cart</button>
               </div>
             </div>
           </div>
