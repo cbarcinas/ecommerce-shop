@@ -13,7 +13,7 @@ const ProductComponent = () => {
       <div className="" key={id}>
         {/* useParams will grab id in <ProductDetails/> comp */}
         <Link to={`/product/${id}`}>
-          <div className="container max-w-xs mx-auto border-3 mt-24">
+          <div className="container max-w-xs min-h-[2em] mx-auto mt-24 p-5 border-3 rounded-lg shadow-2xl  ">
             <div>
               <img className="mx-auto mb-10 w-64" src={image} alt={title} />
             </div>
@@ -34,4 +34,4 @@ const ProductComponent = () => {
 
 export default ProductComponent;
 
-// mt-24 mx-auto max-w-xs p-3 border-2 rounded-lg shadow-lg sm:mx-5
+// mt-24 mx-auto max-w-xs p-3 border-2  sm:mx-5
