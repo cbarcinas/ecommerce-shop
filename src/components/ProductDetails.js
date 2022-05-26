@@ -54,9 +54,7 @@ const ProductDetails = () => {
           </div>
           <div>
             <h1>{title}</h1>
-            <h2>
-              <a>${price}</a>
-            </h2>
+            <p>${price}</p>
             <h3>{category}</h3>
             <p>{description}</p>
             {/* animated add to cart button */}
