@@ -17,21 +17,27 @@ const ProductComponent = () => {
             <div>
               <img className="mx-auto mb-10 w-64" src={image} alt={title} />
             </div>
-            <div className="text-center">
-              <p className="font-md">{title}</p>
-              <p>${price}</p>
+            <div className="text-center ">
+              <p className="font-semibold tracking-wide">{title}</p>
+              <p className="text-lg font-semibold italic opacity-90 tracking-wider">
+                ${price}
+              </p>
               <p>{category}</p>
-              {/* Add to cart button: needs state update */}
-              <button className="mt-3 bg-purple-400 hover:bg-purple-500 font-bold py-2 px-4 border-b-4 border-purple-300  hover:border-purple-500  rounded">
-                Add to Cart
-              </button>
+              <div>
+                <button className="mt-3 mr-6 bg-purple-400 hover:bg-purple-500 font-bold py-2 px-4 border-b-4 border-purple-300  hover:border-purple-500 rounded">
+                  View
+                </button>
+                <button className="mt-3 bg-purple-400 hover:bg-purple-500 font-bold py-2 px-4 border-b-4 border-purple-300  hover:border-purple-500  rounded">
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </Link>
       </div>
     );
   });
-  // eturn map inside our jsx
+  // Return map inside our jsx
   return <>{renderList}</>;
 };
 
