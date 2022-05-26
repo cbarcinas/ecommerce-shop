@@ -13,14 +13,15 @@ const ProductComponent = () => {
       <div className="" key={id}>
         {/* useParams will grab id in <ProductDetails/> comp */}
         <Link to={`/product/${id}`}>
-          <div className="container max-w-xs min-h-[2em] mx-auto mt-24 p-5 border-3 rounded-lg shadow-2xl  ">
+          <div className="container max-w-xs min-h-[2em] mx-auto mt-24 p-5 border-3 rounded-lg shadow-2xl ">
             <div>
               <img className="mx-auto mb-10 w-64" src={image} alt={title} />
             </div>
             <div className="text-center">
-              <p>{title}</p>
+              <p className="font-md">{title}</p>
               <p>${price}</p>
               <p>{category}</p>
+              {/* Add to cart button: needs state update */}
               <button className="mt-3 bg-purple-400 hover:bg-purple-500 font-bold py-2 px-4 border-b-4 border-purple-300  hover:border-purple-500  rounded">
                 Add to Cart
               </button>
