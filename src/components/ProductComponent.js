@@ -23,11 +23,11 @@ const ProductComponent = () => {
                 ${price}
               </p>
               <p>{category}</p>
-              <div>
-                <button className="mt-3 mr-6 bg-purple-400 hover:bg-purple-500 font-bold py-2 px-4 border-b-4 border-purple-300  hover:border-purple-500 rounded">
+              <div className="flex justify-center align-middle">
+                <button className="mt-3 mr-4 text-md font-semibold text-white tracking-wider bg-purple-400 hover:bg-purple-500 py-2 px-4 border-b-4 border-purple-300  hover:border-purple-500 rounded">
                   View
                 </button>
-                <button className="mt-3 bg-purple-400 hover:bg-purple-500 font-bold py-2 px-4 border-b-4 border-purple-300  hover:border-purple-500  rounded">
+                <button className="mt-3 text-md font-semibold text-white tracking-wider bg-blue-500 hover:bg-blue-600 py-2 px-4 border-b-4 border-blue-400  hover:border-blue-600  rounded">
                   Add to Cart
                 </button>
               </div>
