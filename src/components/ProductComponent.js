@@ -8,7 +8,7 @@ const ProductComponent = () => {
 
   // Create a variable containing our map function to pass into our jsx
   const renderList = products.map((product) => {
-    const { id, title, image, price, category } = product;
+    const { id, title, image, price } = product;
     return (
       <div className="" key={id}>
         {/* useParams will grab id in <ProductDetails/> comp */}
