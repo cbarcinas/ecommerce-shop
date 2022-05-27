@@ -10,10 +10,10 @@ const ProductComponent = () => {
   const renderList = products.map((product) => {
     const { id, title, image, price } = product;
     return (
-      <div className="" key={id}>
+      <div key={id}>
         {/* useParams will grab id in <ProductDetails/> comp */}
         <Link to={`/product/${id}`}>
-          <div className="container max-w-xs mx-auto h-full mt-20 p-5 border-3 rounded-lg shadow-2xl ">
+          <div className="container max-w-xs mx-auto h-4/5 mt-20 p-5 border-3 rounded-lg shadow-2xl ">
             <div>
               <img
                 className="mx-auto mb-5 w-full min-w-full h-80 object-contain"
@@ -28,7 +28,7 @@ const ProductComponent = () => {
               <p className="text-lg font-semibold italic tracking-wider">
                 ${price}
               </p>
-              <div className="flex justify-center align-middle">
+              <div className="flex justify-center align-middle mb-">
                 <button className="mt-3 mr-4 text-md font-semibold text-white  py-2 px-3 tracking-wider bg-purple-400 hover:bg-purple-500 border-b-4 border-purple-300  hover:border-purple-500 rounded cursor-pointer">
                   View
                 </button>
