@@ -25,7 +25,7 @@ const ProductComponent = () => {
               <p className=" text-md leading-4 font-semibold tracking-wide">
                 {title}
               </p>
-              <p className="text-lg font-semibold italic opacity-90 tracking-wider">
+              <p className="text-lg font-semibold italic tracking-wider">
                 ${price}
               </p>
               <div className="flex justify-center align-middle">

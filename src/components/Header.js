@@ -22,10 +22,10 @@ const Header = () => {
         </Link>
         <div className="flex">
           <Link to="/cart">
-            <ShoppingCartIcon className="w-7"></ShoppingCartIcon>
+            <ShoppingCartIcon className="w-7 cursor-pointer"></ShoppingCartIcon>
           </Link>
           <MenuIcon
-            className="w-7 ml-3 items-center"
+            className="w-7 ml-3 items-center cursor-pointer"
             onClick={toggleHamburgerMenu}
           />
         </div>
