@@ -6,7 +6,9 @@ function ShoppingCart() {
     <>
       <div className="absolute bg-white inset-0">
         <div>
-          <h2 className="m-5 text-lg font-semibold">Shopping Cart</h2>
+          <h2 className="m-5 text-xl font-medium tracking-wide">
+            Shopping Cart
+          </h2>
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
         </div>
         <div></div>
