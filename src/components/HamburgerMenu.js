@@ -8,7 +8,7 @@ import {
 
 const HamburgerMenu = (props) => {
   // Destructure props from <Header/>
-  const { toggleMenu, toggleHamburgerMenu } = props;
+  const { toggleMenu, toggle } = props;
 
   return (
     <>
@@ -18,7 +18,7 @@ const HamburgerMenu = (props) => {
             <div className="m-auto text-center text-white text-6xl tracking-wider">
               <XIcon
                 className="w-9 absolute top-4 right-4 cursor-pointer"
-                onClick={toggleHamburgerMenu}
+                onClick={toggle}
               />
               {/* user icons */}
               <div>

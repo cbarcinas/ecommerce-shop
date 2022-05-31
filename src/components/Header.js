@@ -10,7 +10,7 @@ const Header = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   // change state of hamburger menu visibility
-  const toggleHamburgerMenu = () => {
+  const toggle = () => {
     setToggleMenu(!toggleMenu);
   };
 
@@ -26,16 +26,13 @@ const Header = () => {
           </Link>
           <MenuIcon
             className="w-7 ml-3 items-center cursor-pointer"
-            onClick={toggleHamburgerMenu}
+            onClick={toggle}
           />
         </div>
       </header>
-      {toggleHamburgerMenu ? (
+      {toggle ? (
         <>
-          <HamburgerMenu
-            toggleMenu={toggleMenu}
-            toggleHamburgerMenu={toggleHamburgerMenu}
-          />
+          <HamburgerMenu toggleMenu={toggleMenu} toggle={toggle} />
         </>
       ) : null}
     </div>
