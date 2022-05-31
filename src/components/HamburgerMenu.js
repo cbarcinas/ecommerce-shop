@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { XIcon } from "@heroicons/react/outline";
-import { ShoppingCartIcon } from "@heroicons/react/outline";
-import { UserCircleIcon } from "@heroicons/react/outline";
+import {
+  XIcon,
+  ShoppingCartIcon,
+  UserCircleIcon,
+} from "@heroicons/react/outline";
 
 const HamburgerMenu = (props) => {
   // Destructure props from <Header/>
