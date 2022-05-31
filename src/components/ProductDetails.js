@@ -44,7 +44,7 @@ const ProductDetails = () => {
   }, [productId]);
 
   return (
-    <div className="transition duration-50">
+    <div>
       {Object.keys(product).length === 0 ? (
         <div>...Loading</div>
       ) : (
