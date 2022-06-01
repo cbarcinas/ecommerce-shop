@@ -4,6 +4,8 @@ export const shoppingCartSlice = createSlice({
   name: "cart",
   initialState: {
     shoppingCart: [],
+    totalItems: 0,
+    totalPrice: 0,
   },
   reducers: {
     // Add item to shopping cart
