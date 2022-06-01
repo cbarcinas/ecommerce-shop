@@ -1,7 +1,11 @@
 import React from "react";
 import { XIcon } from "@heroicons/react/outline";
+import { useSelector } from "react-redux";
 
 function ShoppingCart() {
+  const cart = useSelector((state) => state.cart);
+  console.log("shopping cart :", cart);
+
   return (
     <>
       <div className="absolute bg-white inset-0">
