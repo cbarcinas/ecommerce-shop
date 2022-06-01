@@ -8,9 +8,8 @@ export const shoppingCartSlice = createSlice({
     totalPrice: 0,
   },
   reducers: {
-    // Add item to shopping cart
     addToCart: (state, action) => {
-      return { ...state.cartItems.push(action.payload) };
+      state.shoppingCart.push(action.payload);
     },
   },
 });
