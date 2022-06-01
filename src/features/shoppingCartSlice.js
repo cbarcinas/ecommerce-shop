@@ -6,8 +6,13 @@ export const shoppingCartSlice = createSlice({
     shoppingCart: [],
   },
   reducers: {
-    addItemToCart: (state, action) => {
+    // Add item to shopping cart
+    addToCart: (state, action) => {
       return { ...state.cartItems.push(action.payload) };
     },
   },
 });
+
+export const { addToCart } = shoppingCartSlice.actions;
+
+export default shoppingCartSlice.reducer;
