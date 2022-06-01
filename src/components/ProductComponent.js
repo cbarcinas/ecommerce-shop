@@ -39,7 +39,10 @@ const ProductComponent = () => {
                   View
                 </button>
               </Link>
-              <button className="mt-3 text-md font-semibold text-white py-2 px-3  tracking-wider bg-blue-500 hover:bg-blue-600 border-b-4 border-blue-400  hover:border-blue-600 rounded cursor-pointer" onClick={handleAddToCart}>
+              <button
+                className="mt-3 text-md font-semibold text-white py-2 px-3  tracking-wider bg-blue-500 hover:bg-blue-600 border-b-4 border-blue-400  hover:border-blue-600 rounded cursor-pointer"
+                onClick={() => handleAddToCart(product)}
+              >
                 Add to Cart
               </button>
             </div>
