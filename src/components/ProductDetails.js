@@ -7,6 +7,8 @@ import {
   removeSelectedProduct,
 } from "../features/selectedProductSlice";
 
+// *** missing funcitonality to increment/decrement amount of products being added to cart
+
 const ProductDetails = () => {
   const product = useSelector((state) => state.product);
   console.log(product);
