@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuIcon } from "@heroicons/react/outline";
-import { ShoppingCartIcon } from "@heroicons/react/outline";
+import { ShoppingBagIcon } from "@heroicons/react/outline";
 
 import HamburgerMenu from "./HamburgerMenu";
 
@@ -22,10 +22,10 @@ const Header = () => {
         </Link>
         <div className="flex">
           <Link to="/cart">
-            <ShoppingCartIcon className="w-7 cursor-pointer"></ShoppingCartIcon>
+            <ShoppingBagIcon className="w-8 items-center cursor-pointer"></ShoppingBagIcon>
           </Link>
           <MenuIcon
-            className="w-7 ml-3 items-center cursor-pointer"
+            className="w-8 ml-3 items-center cursor-pointer"
             onClick={toggle}
           />
         </div>
