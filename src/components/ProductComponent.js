@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../features/shoppingCartSlice";
 
 const ProductComponent = () => {
   // Import our products state from our redux store
   const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
 
   // Create a variable containing our map function to pass into our jsx
   const renderList = products.map((product) => {
@@ -34,7 +39,7 @@ const ProductComponent = () => {
                   View
                 </button>
               </Link>
-              <button className="mt-3 text-md font-semibold text-white py-2 px-3  tracking-wider bg-blue-500 hover:bg-blue-600 border-b-4 border-blue-400  hover:border-blue-600 rounded cursor-pointer" onClick={()=> {dispatch(addToCart(item))}}>
+              <button className="mt-3 text-md font-semibold text-white py-2 px-3  tracking-wider bg-blue-500 hover:bg-blue-600 border-b-4 border-blue-400  hover:border-blue-600 rounded cursor-pointer" onClick={handleAddToCart}>
                 Add to Cart
               </button>
             </div>
