@@ -46,7 +46,7 @@ function ShoppingCart() {
                 >
                   <div className="flex items-center">
                     <img
-                      className="max-w-[3em] object-contain cursor-pointer"
+                      className="max-w-[4.5em] object-contain cursor-pointer"
                       src={image}
                       alt={title}
                     />
