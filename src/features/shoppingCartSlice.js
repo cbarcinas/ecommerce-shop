@@ -10,11 +10,10 @@ export const shoppingCartSlice = createSlice({
   reducers: {
     addToCart: (state, action) => {
       // We can use findIndex() method to verify if the item being
-      // added is already in the user's cart.
+      // added to cart already exists in the cart.
       const itemIndex = state.shoppingCart.findIndex(
         (item) => item.id === action.payload.id
       );
-
       // If itemIndex exists then we can add to the current count
       // instead of adding a duplicate item to cart
       if (itemIndex >= 0) {

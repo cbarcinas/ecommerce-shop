@@ -46,13 +46,15 @@ function ShoppingCart() {
                 >
                   <div className="flex items-center">
                     <img
-                      className="max-w-[3em] object-contain"
+                      className="max-w-[3em] object-contain cursor-pointer"
                       src={image}
                       alt={title}
                     />
                     <div>
-                      <p className="text-sm ml-5 leading-snug">{title}</p>
-                      <div className="flex justify-between flex-auto">
+                      <p className="text-sm ml-5 leading-snug tracking-wide">
+                        {title}
+                      </p>
+                      <div className="mt-2 flex justify-between">
                         <p className="ml-5">${price}</p>
                         <div>
                           <span
@@ -70,7 +72,7 @@ function ShoppingCart() {
                           </span>
                         </div>
 
-                        <TrashIcon className="w-5 " />
+                        <TrashIcon className="w-5 cursor-pointer" />
                       </div>
                     </div>
                   </div>
