@@ -26,16 +26,16 @@ function ShoppingCart() {
   return (
     <>
       {shoppingCart.length === 0 ? (
-        <div className="mt-10">
+        <div>
           <h1>Your cart is empty.</h1>
         </div>
       ) : (
-        <div className="absolute bg-white inset-0 overflow-hidden">
+        <div className="absolute bg-white inset-0 z-10">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
           </h2>
-          <div>
+          <div className="bg-white">
             {shoppingCart.map((item) => {
               const { id, title, image, price } = item;
               return (
