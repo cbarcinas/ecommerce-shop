@@ -1,37 +1,70 @@
 import React from "react";
 import { XIcon } from "@heroicons/react/outline";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  incrementItemCount,
+  decrementItemCount,
+} from "../features/shoppingCartSlice";
 
 function ShoppingCart() {
   const cart = useSelector((state) => state.cart);
   console.log("shopping cart :", cart);
+  const dispatch = useDispatch();
 
-  const { shoppingCart, totalItems, totalPrice } = cart;
-  console.log(shoppingCart);
+  const { shoppingCart, totalItems } = cart;
+
+  const handleDecrementCount = () => {
+    dispatch(decrementItemCount);
+  };
+
+  const handleIncrementCount = () => {
+    dispatch(incrementItemCount);
+  };
+
+  // console.log("cart AFTER page load: ", shoppingCart);
+
+  console.log(totalItems);
 
   return (
-
     <>
       {shoppingCart.length === 0 ? (
-        <div> Your cart is empty.</div>
+        <div className="mt-10">
+          <h1>Your cart is empty.</h1>
+        </div>
       ) : (
-        <div className="absolute bg-white inset-0">
-          <div>
-            <h2 className="m-5 text-xl font-medium tracking-wide">
-              Shopping Cart
-            </h2>
-            <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
-          </div>
+        <div className="absolute bg-white inset-0 overflow-hidden">
+          <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
+          <h2
+            className="mt-10 text-xl font-medium tracking-wide border-b-2 border-black
+         "
+          >
+            Shopping Cart
+          </h2>
           <div>
             {shoppingCart.map((item) => {
               const { id, title, image, price } = item;
               return (
-                <div key={id}>
-                  <h3>{title}</h3>
+                <div key={id} className="p-5">
                   <img src={image} alt={title} />
-                  <p>${price}</p>
+                  <h3>{title}</h3>
+                  <div>
+                    <span
+                      className="text-lg cursor-pointer"
+                      onClick={() => handleDecrementCount()}
+                    >
+                      -
+                    </span>
+                    <span>{totalItems}</span>
+                    <span
+                      className="cursor-pointer"
+                      onClick={() => handleIncrementCount()}
+                    >
+                      +
+                    </span>
+                    <p>${price}</p>
+                  </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
