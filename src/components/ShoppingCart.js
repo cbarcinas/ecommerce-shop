@@ -1,5 +1,6 @@
 import React from "react";
 import { XIcon } from "@heroicons/react/outline";
+import { TrashIcon } from "@heroicons/react/outline";
 import { useDispatch, useSelector } from "react-redux";
 import {
   incrementItemCount,
@@ -11,7 +12,7 @@ function ShoppingCart() {
   console.log("shopping cart :", cart);
   const dispatch = useDispatch();
 
-  const { shoppingCart, totalItems } = cart;
+  const { shoppingCart } = cart;
 
   const handleDecrementCount = () => {
     dispatch(decrementItemCount);
@@ -30,33 +31,44 @@ function ShoppingCart() {
           <h1>Your cart is empty.</h1>
         </div>
       ) : (
-        <div className="absolute bg-white inset-0 z-10">
+        <div className="absolute bg-slate-200 inset-0 z-10">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
           </h2>
-          <div className="bg-white">
+          <div className="bg-slate-200">
             {shoppingCart.map((item) => {
               const { id, title, image, price } = item;
               return (
-                <div key={id} className="p-5">
-                  <img src={image} alt={title} />
-                  <h3>{title}</h3>
-                  <div>
-                    <span
-                      className="text-lg cursor-pointer"
-                      onClick={() => handleDecrementCount()}
-                    >
-                      -
-                    </span>
-                    <span>{totalItems}</span>
-                    <span
-                      className="cursor-pointer"
-                      onClick={() => handleIncrementCount()}
-                    >
-                      +
-                    </span>
-                    <p>${price}</p>
+                <div key={id} className="mx-4 mb-6 p-5 shadow-2xl">
+                  <div className="flex items-center">
+                    <img
+                      className="max-w-[3em] object-contain"
+                      src={image}
+                      alt={title}
+                    />
+                    <div>
+                      <p className="text-sm ml-5 leading-snug">{title}</p>
+                      <div className="flex justify-between">
+                        <div className="ml-6">
+                          <span
+                            className="text-lg cursor-pointer"
+                            onClick={() => handleDecrementCount()}
+                          >
+                            -
+                          </span>
+                          <span>1</span>
+                          <span
+                            className="cursor-pointer"
+                            onClick={() => handleIncrementCount()}
+                          >
+                            +
+                          </span>
+                        </div>
+                        <p>${price}</p>
+                        <TrashIcon className="w-5 " />
+                      </div>
+                    </div>
                   </div>
                 </div>
               );
