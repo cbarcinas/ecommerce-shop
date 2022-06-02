@@ -31,16 +31,19 @@ function ShoppingCart() {
           <h1>Your cart is empty.</h1>
         </div>
       ) : (
-        <div className="absolute bg-slate-200 inset-0 z-10">
+        <div className="absolute bg-slate-300 top-0 z-10">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
           </h2>
-          <div className="bg-slate-200">
+          <div className="bg-slate-300">
             {shoppingCart.map((item) => {
               const { id, title, image, price } = item;
               return (
-                <div key={id} className="mx-4 mb-6 p-5 shadow-2xl">
+                <div
+                  key={id}
+                  className="mx-4 mb-7 p-5 bg-white rounded-lg shadow-2xl"
+                >
                   <div className="flex items-center">
                     <img
                       className="max-w-[3em] object-contain"
