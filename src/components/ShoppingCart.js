@@ -31,7 +31,7 @@ function ShoppingCart() {
           <h1>Your cart is empty.</h1>
         </div>
       ) : (
-        <div className="absolute bg-slate-300 top-0 right-0 z-10">
+        <div className="absolute bg-slate-300 top-0 right-0 left-0 z-10">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
@@ -54,16 +54,16 @@ function ShoppingCart() {
                       <p className="text-sm ml-5 leading-snug tracking-wide">
                         {title}
                       </p>
-                      <div className="mt-2 flex justify-between">
+                      <div className="mt-2 w-full flex justify-between">
                         <p className="ml-5">${price}</p>
-                        <div>
+                        <div className=" text-lg">
                           <span
                             className="text-lg cursor-pointer"
                             onClick={() => handleDecrementCount()}
                           >
                             -
                           </span>
-                          <span>1</span>
+                          <span className="mx-2">1</span>
                           <span
                             className="cursor-pointer"
                             onClick={() => handleIncrementCount()}
