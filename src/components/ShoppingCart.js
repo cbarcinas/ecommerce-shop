@@ -31,7 +31,7 @@ function ShoppingCart() {
           <h1>Your cart is empty.</h1>
         </div>
       ) : (
-        <div className="absolute bg-slate-300 top-0 z-10">
+        <div className="absolute bg-slate-300 top-0 right-0 z-10">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
@@ -52,8 +52,9 @@ function ShoppingCart() {
                     />
                     <div>
                       <p className="text-sm ml-5 leading-snug">{title}</p>
-                      <div className="flex justify-between">
-                        <div className="ml-6">
+                      <div className="flex justify-between flex-auto">
+                        <p className="ml-5">${price}</p>
+                        <div>
                           <span
                             className="text-lg cursor-pointer"
                             onClick={() => handleDecrementCount()}
@@ -68,7 +69,7 @@ function ShoppingCart() {
                             +
                           </span>
                         </div>
-                        <p>${price}</p>
+
                         <TrashIcon className="w-5 " />
                       </div>
                     </div>
