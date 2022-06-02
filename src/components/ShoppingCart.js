@@ -36,29 +36,31 @@ function ShoppingCart() {
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
           </h2>
-          <div className="bg-slate-300">
+          <div className="bg-slate-300 mx-2">
             {shoppingCart.map((item) => {
               const { id, title, image, price } = item;
               return (
                 <div
                   key={id}
-                  className="mx-4 mb-7 p-5 bg-white rounded-lg shadow-2xl"
+                  className="mx-auto mb-7 max-w-sm min-w-[40%] p-5 bg-white rounded-lg shadow-2xl"
                 >
                   <div className="flex items-center">
-                    <img
-                      className="max-w-[4.5em] object-contain cursor-pointer"
-                      src={image}
-                      alt={title}
-                    />
-                    <div>
+                    <div className="flex-2">
+                      <img
+                        className="max-w-[4.5em] object-contain cursor-pointer"
+                        src={image}
+                        alt={title}
+                      />
+                    </div>
+                    <div className="flex-1">
                       <p className="text-sm ml-5 leading-snug tracking-wide">
                         {title}
                       </p>
-                      <div className="mt-2 w-full flex justify-between">
+                      <div className="mt-2 text-lg flex justify-between items-center">
                         <p className="ml-5">${price}</p>
-                        <div className=" text-lg">
+                        <div className="text-lg">
                           <span
-                            className="text-lg cursor-pointer"
+                            className="cursor-pointer"
                             onClick={() => handleDecrementCount()}
                           >
                             -
@@ -71,8 +73,7 @@ function ShoppingCart() {
                             +
                           </span>
                         </div>
-
-                        <TrashIcon className="w-5 cursor-pointer" />
+                        <TrashIcon className="w-5 text-red-500 cursor-pointer" />
                       </div>
                     </div>
                   </div>
