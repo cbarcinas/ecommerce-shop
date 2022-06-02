@@ -42,7 +42,7 @@ function ShoppingCart() {
               return (
                 <div
                   key={id}
-                  className="mx-auto mb-7 max-w-sm min-w-[40%] p-5 bg-white rounded-lg shadow-2xl"
+                  className="mx-auto mb-7 max-w-xs min-w-[40%] p-5 bg-white rounded-lg shadow-2xl"
                 >
                   <div className="flex items-center">
                     <div className="flex-2">
