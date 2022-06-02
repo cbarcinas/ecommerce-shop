@@ -23,8 +23,6 @@ function ShoppingCart() {
 
   // console.log("cart AFTER page load: ", shoppingCart);
 
-  console.log(totalItems);
-
   return (
     <>
       {shoppingCart.length === 0 ? (
@@ -34,10 +32,7 @@ function ShoppingCart() {
       ) : (
         <div className="absolute bg-white inset-0 overflow-hidden">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
-          <h2
-            className="mt-10 text-xl font-medium tracking-wide border-b-2 border-black
-         "
-          >
+          <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
           </h2>
           <div>
