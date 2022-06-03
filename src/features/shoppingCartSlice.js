@@ -21,10 +21,11 @@ export const shoppingCartSlice = createSlice({
       // instead of adding a duplicate item to cart
       if (itemIndex >= 0) {
         state.shoppingCart[itemIndex].cartQuantity += 1;
-        toast.success("increased product quantity");
+        toast.success("Item quantity increased");
       } else {
         // If item doesn't exist in cart, we can add it
         // When the user adds a item to their cart, the count becomes 1
+        toast.success("Item added to cart");
         const tempProd = { ...action.payload, cartQuantity: 1 };
         state.shoppingCart.push(tempProd);
       }
