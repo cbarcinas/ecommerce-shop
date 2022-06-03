@@ -31,7 +31,7 @@ function ShoppingCart() {
           <h1>Your cart is empty.</h1>
         </div>
       ) : (
-        <div className="absolute bg-slate-300 top-0 right-0 left-0 z-10">
+        <div className="absolute bg-slate-300 top-0 right-0 left-0 z-10 inset-0">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
