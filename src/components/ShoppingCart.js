@@ -2,6 +2,7 @@ import React from "react";
 import { XIcon } from "@heroicons/react/outline";
 import { TrashIcon } from "@heroicons/react/outline";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   incrementItemCount,
   decrementItemCount,
@@ -27,9 +28,19 @@ function ShoppingCart() {
   return (
     <>
       {shoppingCart.length === 0 ? (
-        <div>
-          <h1>Your cart is empty.</h1>
-        </div>
+        <>
+          <div className="absolute">
+            <div className="h-screen w-screen flex justify-center items-center text-center">
+              <Link to="/">
+                <div className="cursor-pointer">
+                  <p className="text-xl text-left">oops,</p>
+                  <h1 className="text-4xl">your cart is empty</h1>
+                  <h2 className="text-2xl underline">shop now</h2>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </>
       ) : (
         <div className="absolute bg-slate-300 top-0 right-0 left-0 z-10 inset-0">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
