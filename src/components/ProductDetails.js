@@ -22,6 +22,8 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
 
   const fetchProductDetail = async () => {
+
+    
     // Store the server response
     const response = await axios
       .get(`https://fakestoreapi.com/products/${productId}`)
