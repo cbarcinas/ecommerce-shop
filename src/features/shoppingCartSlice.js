@@ -22,16 +22,16 @@ export const shoppingCartSlice = createSlice({
       if (itemIndex >= 0) {
         state.shoppingCart[itemIndex].cartQuantity += 1;
         toast.success(
-          `${state.shoppingCart[itemIndex].name} quantity increased`
+          `${state.shoppingCart[itemIndex].title} quantity increased`
         );
       } else {
         // If item doesn't exist in cart, we can add it
         // When the user adds a item to their cart, the count becomes 1
         const tempProd = { ...action.payload, cartQuantity: 1 };
         state.shoppingCart.push(tempProd);
-        toast.success(`${action.payload.name} added to cart`);
+        toast.success(`${action.payload.title} added to cart`);
       }
-      console.log(itemIndex);
+      // console.log(action.payload);
     },
     incrementItemCount: (state) => {
       return state.totalItems + 1;
