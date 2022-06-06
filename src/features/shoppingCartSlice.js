@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-hot-toast";
 
+// create slice
 export const shoppingCartSlice = createSlice({
   name: "cart",
   initialState: {
@@ -42,6 +43,7 @@ export const shoppingCartSlice = createSlice({
   },
 });
 
+// export actions
 export const { addToCart, incrementItemCount, decrementItemCount } =
   shoppingCartSlice.actions;
 
