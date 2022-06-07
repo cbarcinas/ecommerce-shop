@@ -49,7 +49,7 @@ function ShoppingCart() {
           </h2>
           <div className="bg-slate-300 mx-2">
             {shoppingCart.map((item) => {
-              const { id, title, image, price } = item;
+              const { id, title, image, price, cartQuantity } = item;
               return (
                 <div
                   key={id}
@@ -76,7 +76,7 @@ function ShoppingCart() {
                           >
                             -
                           </span>
-                          <span className="mx-2">1</span>
+                          <span className="mx-2">{cartQuantity}</span>
                           <span
                             className="cursor-pointer"
                             onClick={() => handleIncrementCount()}
