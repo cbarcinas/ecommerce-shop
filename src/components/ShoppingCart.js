@@ -16,11 +16,11 @@ function ShoppingCart() {
   const { shoppingCart } = cart;
 
   const handleDecrementCount = () => {
-    dispatch(decrementItemCount);
+    dispatch(decrementItemCount());
   };
 
   const handleIncrementCount = () => {
-    dispatch(incrementItemCount);
+    dispatch(incrementItemCount());
   };
 
   // console.log("cart AFTER page load: ", shoppingCart);

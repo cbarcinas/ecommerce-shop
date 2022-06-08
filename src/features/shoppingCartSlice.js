@@ -6,7 +6,7 @@ export const shoppingCartSlice = createSlice({
   name: "cart",
   initialState: {
     shoppingCart: [],
-    cartQuantity: 0,
+    cartTotalQuantity: 0,
     cartTotalPrice: 0,
   },
   reducers: {
@@ -35,10 +35,10 @@ export const shoppingCartSlice = createSlice({
       // console.log(action.payload);
     },
     incrementItemCount: (state) => {
-      return state.totalItems + 1;
+      return { ...(state.shoppingCart.cartQuantity + 1) };
     },
     decrementItemCount: (state) => {
-      return state.totalItems - 1;
+      return { ...(state.shoppingCart.cartQuantity - 1) };
     },
   },
 });
