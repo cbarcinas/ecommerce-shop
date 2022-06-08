@@ -33,6 +33,10 @@ export const shoppingCartSlice = createSlice({
         toast.success(`${action.payload.title} added to cart`);
       }
       // console.log(action.payload);
+
+      // Once we have added the items to state,
+      // we can add the shopping cart to local storage
+      localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
     },
     incrementItemCount: (state) => {
       return { ...(state.shoppingCart.cartQuantity + 1) };
