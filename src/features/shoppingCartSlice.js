@@ -5,7 +5,11 @@ import { toast } from "react-hot-toast";
 export const shoppingCartSlice = createSlice({
   name: "cart",
   initialState: {
-    shoppingCart: [],
+    // If shopping cart has items in local storage we will add that to 
+    // state otherwise, we will set our shopping cart key to an empty array.
+    shoppingCart: localStorage.getItem("shoppingCart")
+      ? JSON.parse(localStorage.getItem("shoppingCart"))
+      : [],
     cartTotalQuantity: 0,
     cartTotalPrice: 0,
   },
