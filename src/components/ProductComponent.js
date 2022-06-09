@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/shoppingCartSlice";
 
@@ -7,9 +8,11 @@ const ProductComponent = () => {
   // Import our products state from our redux store
   const products = useSelector((state) => state.allProducts.products);
   const dispatch = useDispatch();
+  // const navigate = useNavigate();
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
+    // navigate("/cart");
   };
 
   // Create a variable containing our map function to pass into our jsx
