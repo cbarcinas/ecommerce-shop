@@ -52,7 +52,7 @@ export const shoppingCartSlice = createSlice({
       // Assign our shoppingCart state to the newly filtered array
       state.shoppingCart = newCartItems;
       localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
-      toast.success(`${action.payload.title} removed from cart`);
+      toast.error(`${action.payload.title} removed from cart`);
     },
     incrementItemCount: (state) => {
       return { ...(state.shoppingCart.cartQuantity + 1) };
