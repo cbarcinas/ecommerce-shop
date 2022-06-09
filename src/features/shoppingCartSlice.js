@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 export const shoppingCartSlice = createSlice({
   name: "cart",
   initialState: {
-    // If shopping cart has items in local storage we will add that to 
+    // If shopping cart has items in local storage we will add that to
     // state otherwise, we will set our shopping cart key to an empty array.
     shoppingCart: localStorage.getItem("shoppingCart")
       ? JSON.parse(localStorage.getItem("shoppingCart"))
@@ -41,6 +41,16 @@ export const shoppingCartSlice = createSlice({
       // Once we have added the items to state,
       // we can add the shopping cart to local storage
       localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
+    },
+    removeFromCart(state, action) {
+      // Use filter method to return an array of cart items without,
+      // the id that matches our action payload
+      const newCartItems = state.shoppingCart.filter(
+        (cartItem) => cartItem.id !== action.payload.id
+      );
+
+      // Assign our shoppingCart state to the newly filtered array
+      state.shoppingCart = newCartItems;
     },
     incrementItemCount: (state) => {
       return { ...(state.shoppingCart.cartQuantity + 1) };
