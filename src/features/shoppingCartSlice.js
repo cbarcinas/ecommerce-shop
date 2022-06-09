@@ -51,6 +51,8 @@ export const shoppingCartSlice = createSlice({
 
       // Assign our shoppingCart state to the newly filtered array
       state.shoppingCart = newCartItems;
+      localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
+      
     },
     incrementItemCount: (state) => {
       return { ...(state.shoppingCart.cartQuantity + 1) };
@@ -62,7 +64,11 @@ export const shoppingCartSlice = createSlice({
 });
 
 // export actions
-export const { addToCart, incrementItemCount, decrementItemCount } =
-  shoppingCartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  incrementItemCount,
+  decrementItemCount,
+} = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
