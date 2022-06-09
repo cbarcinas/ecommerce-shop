@@ -4,6 +4,7 @@ import { TrashIcon } from "@heroicons/react/outline";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
+  removeFromCart,
   incrementItemCount,
   decrementItemCount,
 } from "../features/shoppingCartSlice";
@@ -21,6 +22,11 @@ function ShoppingCart() {
 
   const handleIncrementCount = () => {
     dispatch(incrementItemCount());
+  };
+
+  // Item param is coming from our filter method
+  const handleRemoveFromCart = (item) => {
+    dispatch(removeFromCart(item));
   };
 
   const clearCart = () => {
@@ -93,7 +99,10 @@ function ShoppingCart() {
                             +
                           </button>
                         </div>
-                        <TrashIcon className="w-5 text-red-500 cursor-pointer" />
+                        <TrashIcon
+                          className="w-5 text-red-500 cursor-pointer"
+                          onClick={() => handleRemoveFromCart(item)}
+                        />
                       </div>
                     </div>
                   </div>
