@@ -47,9 +47,11 @@ function ShoppingCart() {
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
           </h2>
+
           <div className="bg-slate-300 mx-2">
             {shoppingCart.map((item) => {
-              const { id, title, image, price, cartQuantity } = item;
+              const { id, title, image, price, cartQuantity, cartTotalAmount } =
+                item;
               return (
                 <div
                   key={id}
@@ -92,6 +94,17 @@ function ShoppingCart() {
               );
             })}
           </div>
+          {/* Cart Summary */}
+          <div>
+            <button>Clear Cart</button>
+            <div>
+              <div>
+                <span>Subtotal</span>
+                <span>$19.99</span>
+              </div>
+            </div>
+          </div>
+          {/* End Cart Summary */}
         </div>
       )}
     </>
