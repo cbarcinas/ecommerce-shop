@@ -23,6 +23,11 @@ function ShoppingCart() {
     dispatch(incrementItemCount());
   };
 
+  const clearCart = () => {
+    window.localStorage.removeItem("shoppingCart");
+    window.location.reload();
+  };
+
   // console.log("cart AFTER page load: ", shoppingCart);
 
   return (
@@ -35,7 +40,9 @@ function ShoppingCart() {
                 <div className="cursor-pointer">
                   <p className="text-xl text-left">oops,</p>
                   <h1 className="text-4xl">your cart is empty</h1>
-                  <h2 className="text-2xl underline">shop now</h2>
+                  <Link to="/">
+                    <h2 className="text-2xl underline">shop now</h2>
+                  </Link>
                 </div>
               </Link>
             </div>
@@ -72,19 +79,19 @@ function ShoppingCart() {
                       <div className="mt-2 text-lg flex justify-between items-center">
                         <p className="ml-5">${price}</p>
                         <div className="text-lg">
-                          <span
+                          <button
                             className="cursor-pointer"
                             onClick={() => handleDecrementCount()}
                           >
                             -
-                          </span>
+                          </button>
                           <span className="mx-2">{cartQuantity}</span>
-                          <span
+                          <button
                             className="cursor-pointer"
                             onClick={() => handleIncrementCount()}
                           >
                             +
-                          </span>
+                          </button>
                         </div>
                         <TrashIcon className="w-5 text-red-500 cursor-pointer" />
                       </div>
@@ -96,11 +103,16 @@ function ShoppingCart() {
           </div>
           {/* Cart Summary */}
           <div>
-            <button>Clear Cart</button>
+            <button onClick={clearCart}>Clear Cart</button>
             <div>
               <div>
                 <span>Subtotal</span>
                 <span>$19.99</span>
+              </div>
+              <p>Taxes and Shipping calculated at checkout</p>
+              <button>Checkout</button>
+              <div>
+                <Link to="/">Continue Shopping</Link>
               </div>
             </div>
           </div>
