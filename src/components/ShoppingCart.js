@@ -30,6 +30,7 @@ function ShoppingCart() {
   };
 
   const clearCart = () => {
+    // Removes key/value from ls, then regresh window
     window.localStorage.removeItem("shoppingCart");
     window.location.reload();
   };
@@ -111,19 +112,19 @@ function ShoppingCart() {
             })}
           </div>
           {/* Cart Summary */}
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col items-center">
             <button
-              className="bg-red-500 px-3 p-1 rounded-md block max-w-xs "
+              className=" bg-red-500 text-white tracking-wider px-3 p-1 rounded-md block max-w-xs "
               onClick={clearCart}
             >
               Clear Cart
             </button>
             <div className="mt-5">
-              <div className="flex">
+              <div className="flex text-xl">
                 <span className="flex-1">Subtotal</span>
-                <span className="flex-1 justify-end">$19.99</span>
+                <span>$19.99</span>
               </div>
-              <p className="text-xs tracking-wide text-gray-800">
+              <p className="mb-5 text-xs tracking-wide text-gray-600">
                 Taxes and Shipping calculated at checkout
               </p>
               <button>Checkout</button>
