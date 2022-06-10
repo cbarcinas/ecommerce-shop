@@ -44,7 +44,7 @@ export const shoppingCartSlice = createSlice({
     },
     removeFromCart(state, action) {
       // Use filter method to return an array of cart items without,
-      // the id that matches our action payload
+      // the id that matches our action payload+
       const newCartItems = state.shoppingCart.filter(
         (cartItem) => cartItem.id !== action.payload.id
       );
