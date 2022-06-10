@@ -55,7 +55,7 @@ function ShoppingCart() {
           </div>
         </>
       ) : (
-        <div className="absolute bg-slate-300 top-0 right-0 left-0 z-10 inset-0">
+        <div className="absolute bg-slate-300 top-0 right-0 left-0">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
@@ -111,14 +111,21 @@ function ShoppingCart() {
             })}
           </div>
           {/* Cart Summary */}
-          <div>
-            <button onClick={clearCart}>Clear Cart</button>
-            <div>
-              <div>
-                <span>Subtotal</span>
-                <span>$19.99</span>
+          <div className="flex flex-col justify-center items-center">
+            <button
+              className="bg-red-500 px-3 p-1 rounded-md block max-w-xs "
+              onClick={clearCart}
+            >
+              Clear Cart
+            </button>
+            <div className="mt-5">
+              <div className="flex">
+                <span className="flex-1">Subtotal</span>
+                <span className="flex-1 justify-end">$19.99</span>
               </div>
-              <p>Taxes and Shipping calculated at checkout</p>
+              <p className="text-xs tracking-wide text-gray-800">
+                Taxes and Shipping calculated at checkout
+              </p>
               <button>Checkout</button>
               <div>
                 <Link to="/">Continue Shopping</Link>
