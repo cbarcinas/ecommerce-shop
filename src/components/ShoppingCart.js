@@ -20,8 +20,8 @@ function ShoppingCart() {
     dispatch(decrementItemCount(item));
   };
 
-  const handleIncrementCount = () => {
-    dispatch(incrementItemCount());
+  const handleIncrementCount = (item) => {
+    dispatch(incrementItemCount(item));
   };
 
   // Item param is coming from our filter method
@@ -95,7 +95,7 @@ function ShoppingCart() {
                           <span className="mx-2">{cartQuantity}</span>
                           <button
                             className="cursor-pointer"
-                            onClick={() => handleIncrementCount()}
+                            onClick={() => handleIncrementCount(cartItem)}
                           >
                             +
                           </button>
