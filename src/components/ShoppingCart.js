@@ -83,7 +83,7 @@ function ShoppingCart() {
                       </p>
                       <div className="mt-2 text-lg flex justify-between items-center">
                         <p className="ml-5">${price * cartQuantity}</p>
-                        <div className="text-lg">
+                        <div className="text-lg border-2 border-black border-opacity-20 rounded-md px-3">
                           <button
                             className="cursor-pointer"
                             onClick={() => handleDecrementCount(cartItem)}
