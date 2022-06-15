@@ -64,16 +64,18 @@ export const shoppingCartSlice = createSlice({
       }
     },
     decrementItemCount: (state, action) => {
+      // Find the index of the item that matches our payload
       const itemIndex = state.shoppingCart.findIndex(
         (item) => item.id === action.payload.id
       );
 
+      // If that item's quantity is greater than 1 then we subtract 1 then show success message
       if (state.shoppingCart[itemIndex].cartQuantity > 1) {
         state.shoppingCart[itemIndex].cartQuantity -= 1;
         toast.success(`${action.payload.name} quantity decreased`);
       }
-      // If the current item quantity is 1 and the user decreases it, the item
-      // should be removed from the cart since the quantity will be 0
+      // If the current item quantity is 1 and the user decreases it, the item's
+      // quantity should be 0 therefore removed from the cart.
       else if (state.shoppingCart[itemIndex].cartQuantity === 1) {
         const newCartItems = state.shoppingCart.filter(
           (cartItem) => cartItem.id !== action.payload.id
