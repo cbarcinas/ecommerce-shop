@@ -16,8 +16,8 @@ function ShoppingCart() {
 
   const { shoppingCart } = cart;
 
-  const handleDecrementCount = () => {
-    dispatch(decrementItemCount());
+  const handleDecrementCount = (item) => {
+    dispatch(decrementItemCount(item));
   };
 
   const handleIncrementCount = () => {
