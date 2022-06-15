@@ -44,7 +44,7 @@ export const shoppingCartSlice = createSlice({
     },
     removeFromCart(state, action) {
       // Use filter method to return an array of cart items without,
-      // the id that matches our action payload+
+      // the id that matches our action payload
       const newCartItems = state.shoppingCart.filter(
         (cartItem) => cartItem.id !== action.payload.id
       );
@@ -54,11 +54,38 @@ export const shoppingCartSlice = createSlice({
       localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
       toast.error(`${action.payload.title} removed from cart`);
     },
-    incrementItemCount: (state) => {
-      return { ...(state.shoppingCart.cartQuantity + 1) };
+    incrementItemCount: (state, action) => {
+      const itemIndex = state.shoppingCart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      if (state.shoppingCart[itemIndex].cartQuantity > 1) {
+        state.shoppingCart[itemIndex].cartQuantity += 1;
+      }
     },
-    decrementItemCount: (state) => {
-      return { ...(state.shoppingCart.cartQuantity - 1) };
+    decrementItemCount: (state, action) => {
+      const itemIndex = state.shoppingCart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      if (state.shoppingCart[itemIndex].cartQuantity > 1) {
+        state.shoppingCart[itemIndex].cartQuantity -= 1;
+        toast.success(`${action.payload.name} quantity decreased`);
+      }
+      // If the current item quantity is 1 and the user decreases it, the item
+      // should be removed from the cart since the quantity will be 0
+      else if (state.shoppingCart[itemIndex].cartQuantity === 1) {
+        const newCartItems = state.shoppingCart.filter(
+          (cartItem) => cartItem.id !== action.payload.id
+        );
+
+        state.shoppingCart = newCartItems;
+        localStorage.setItem(
+          "shoppingCart",
+          JSON.stringify(state.shoppingCart)
+        );
+        toast.error(`${action.payload.title} removed from cart`);
+      }
     },
   },
 });
