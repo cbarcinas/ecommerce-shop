@@ -64,7 +64,7 @@ function ShoppingCart() {
 
           <div className="bg-slate-300 mx-2">
             {shoppingCart.map((cartItem) => {
-              const { id, title, image, price, cartQuantity, cartTotalAmount } =
+              const { id, title, image, price, cartQuantity } =
                 cartItem;
               return (
                 <div
