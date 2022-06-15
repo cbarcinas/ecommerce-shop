@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   removeFromCart,
-  incrementItemCount,
+  addToCart,
   decrementItemCount,
+  clearCart,
 } from "../features/shoppingCartSlice";
 
 function ShoppingCart() {
@@ -21,7 +22,7 @@ function ShoppingCart() {
   };
 
   const handleIncrementCount = (item) => {
-    dispatch(incrementItemCount(item));
+    dispatch(addToCart(item));
   };
 
   // Item param is coming from our filter method
@@ -29,10 +30,8 @@ function ShoppingCart() {
     dispatch(removeFromCart(item));
   };
 
-  const clearCart = () => {
-    // Removes key/value from ls, then regresh window
-    window.localStorage.removeItem("shoppingCart");
-    window.location.reload();
+  const handleClearCart = () => {
+    dispatch(clearCart());
   };
 
   // console.log("cart AFTER page load: ", shoppingCart);
@@ -64,8 +63,7 @@ function ShoppingCart() {
 
           <div className="bg-slate-300 mx-2">
             {shoppingCart.map((cartItem) => {
-              const { id, title, image, price, cartQuantity } =
-                cartItem;
+              const { id, title, image, price, cartQuantity } = cartItem;
               return (
                 <div
                   key={id}
@@ -84,7 +82,7 @@ function ShoppingCart() {
                         {title}
                       </p>
                       <div className="mt-2 text-lg flex justify-between items-center">
-                        <p className="ml-5">${price}</p>
+                        <p className="ml-5">${price * cartQuantity}</p>
                         <div className="text-lg">
                           <button
                             className="cursor-pointer"
@@ -115,7 +113,7 @@ function ShoppingCart() {
           <div className="flex flex-col items-center">
             <button
               className=" bg-red-500 text-white tracking-wider px-3 py-1 rounded-md block max-w-xs "
-              onClick={clearCart}
+              onClick={() => handleClearCart()}
             >
               Clear Cart
             </button>
