@@ -61,6 +61,7 @@ export const shoppingCartSlice = createSlice({
 
       if (state.shoppingCart[itemIndex].cartQuantity > 1) {
         state.shoppingCart[itemIndex].cartQuantity += 1;
+        toast.success(`${action.payload.name} quantity increased`);
       }
     },
     decrementItemCount: (state, action) => {
