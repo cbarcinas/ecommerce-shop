@@ -54,16 +54,6 @@ export const shoppingCartSlice = createSlice({
       localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
       toast.error(`${action.payload.title} removed from cart`);
     },
-    incrementItemCount: (state, action) => {
-      const itemIndex = state.shoppingCart.findIndex(
-        (item) => item.id === action.payload.id
-      );
-
-      if (state.shoppingCart[itemIndex].cartQuantity > 1) {
-        state.shoppingCart[itemIndex].cartQuantity += 1;
-        toast.success(`${action.payload.name} quantity increased`);
-      }
-    },
     decrementItemCount: (state, action) => {
       // Find the index of the item that matches our payload
       const itemIndex = state.shoppingCart.findIndex(
@@ -73,7 +63,7 @@ export const shoppingCartSlice = createSlice({
       // If that item's quantity is greater than 1 then we subtract 1 then show success message
       if (state.shoppingCart[itemIndex].cartQuantity > 1) {
         state.shoppingCart[itemIndex].cartQuantity -= 1;
-        toast.success(`${action.payload.name} quantity decreased`);
+        toast.success(`${action.payload.title} quantity decreased`);
       }
       // If the current item quantity is 1 and the user decreases it, the item's
       // quantity should be 0 therefore removed from the cart.
@@ -83,6 +73,7 @@ export const shoppingCartSlice = createSlice({
         );
 
         state.shoppingCart = newCartItems;
+
         localStorage.setItem(
           "shoppingCart",
           JSON.stringify(state.shoppingCart)
@@ -90,15 +81,17 @@ export const shoppingCartSlice = createSlice({
         toast.error(`${action.payload.title} removed from cart`);
       }
     },
+    clearCart: (state, action) => {
+      state.shoppingCart = [];
+      toast.error(`Cart Cleared`);
+
+      localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
+    },
   },
 });
 
 // export actions
-export const {
-  addToCart,
-  removeFromCart,
-  incrementItemCount,
-  decrementItemCount,
-} = shoppingCartSlice.actions;
+export const { addToCart, removeFromCart, decrementItemCount, clearCart } =
+  shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
