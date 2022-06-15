@@ -63,9 +63,9 @@ function ShoppingCart() {
           </h2>
 
           <div className="bg-slate-300 mx-2">
-            {shoppingCart.map((item) => {
+            {shoppingCart.map((cartItem) => {
               const { id, title, image, price, cartQuantity, cartTotalAmount } =
-                item;
+                cartItem;
               return (
                 <div
                   key={id}
@@ -88,7 +88,7 @@ function ShoppingCart() {
                         <div className="text-lg">
                           <button
                             className="cursor-pointer"
-                            onClick={() => handleDecrementCount()}
+                            onClick={() => handleDecrementCount(cartItem)}
                           >
                             -
                           </button>
@@ -102,7 +102,7 @@ function ShoppingCart() {
                         </div>
                         <TrashIcon
                           className="w-5 text-red-500 cursor-pointer"
-                          onClick={() => handleRemoveFromCart(item)}
+                          onClick={() => handleRemoveFromCart(cartItem)}
                         />
                       </div>
                     </div>
