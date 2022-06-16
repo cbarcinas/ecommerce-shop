@@ -83,7 +83,7 @@ export const shoppingCartSlice = createSlice({
     },
     clearCart: (state, action) => {
       state.shoppingCart = [];
-      toast.error(`Cart Cleared`);
+      toast.error(`Bag Cleared`);
 
       localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
     },
