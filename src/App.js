@@ -11,11 +11,9 @@ function App() {
     // Create application routing
     <div className="App">
       <Toaster
-        position="top-center"
+        position="bottom-left"
         reverseOrder={false}
         gutter={8}
-        containerClassName=""
-        containerStyle={{}}
         toastOptions={{
           // Define default options
           className: "",
