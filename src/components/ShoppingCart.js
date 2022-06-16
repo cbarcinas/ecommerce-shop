@@ -108,35 +108,35 @@ function ShoppingCart() {
                 </div>
               );
             })}
-            {/* Cart Summary */}
-            <div className=" flex flex-col items-center py-3">
-              <button
-                className=" bg-red-500 text-white tracking-wider px-3 py-1 rounded-md block max-w-xs "
-                onClick={() => handleClearCart()}
-              >
-                Clear Cart
+          </div>
+          {/* Cart Summary */}
+          <div className=" flex flex-col items-center py-5">
+            <button
+              className=" bg-red-500 text-white tracking-wider px-3 py-1 rounded-md block max-w-xs "
+              onClick={() => handleClearCart()}
+            >
+              Clear Cart
+            </button>
+            <div className="flex flex-col mt-5">
+              <div className="flex text-xl">
+                <span className="flex-1">Subtotal</span>
+                <span>$19.99</span>
+              </div>
+              <p className="mb-5 text-xs tracking-wide text-gray-600">
+                Taxes and Shipping calculated at checkout
+              </p>
+              <button className="px-12 py-2 items-center bg-blue-500 text-white text-xl tracking-wider cursor-pointer rounded-md ">
+                Checkout
               </button>
-              <div className="flex flex-col mt-5">
-                <div className="flex text-xl">
-                  <span className="flex-1">Subtotal</span>
-                  <span>$19.99</span>
-                </div>
-                <p className="mb-5 text-xs tracking-wide text-gray-600">
-                  Taxes and Shipping calculated at checkout
+              <div>
+                <p className="mt-5 text-xs tracking-wide text-gray-600">
+                  Not quite ready to checkout ?
                 </p>
-                <button className="px-12 py-2 items-center bg-blue-500 text-white text-xl tracking-wider cursor-pointer rounded-md ">
-                  Checkout
-                </button>
-                <div>
-                  <p className="mt-5 text-xs tracking-wide text-gray-600">
-                    Not quite ready to checkout ?
-                  </p>
-                  <Link to="/">Continue Shopping</Link>
-                </div>
+                <Link to="/">Continue Shopping</Link>
               </div>
             </div>
-            {/* End Cart Summary */}
           </div>
+          {/* End Cart Summary */}
         </div>
       )}
     </>
