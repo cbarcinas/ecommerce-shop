@@ -55,13 +55,13 @@ function ShoppingCart() {
           </div>
         </>
       ) : (
-        <div className=" bg-slate-300 h-screen w-screen absolute">
+        <div className=" bg-slate-300 w-screen absolute">
           <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
           <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
             Shopping Cart
           </h2>
 
-          <div className="bg-slate-300 mx-2">
+          <div>
             {shoppingCart.map((cartItem) => {
               const { id, title, image, price, cartQuantity } = cartItem;
               return (
@@ -110,7 +110,7 @@ function ShoppingCart() {
             })}
           </div>
           {/* Cart Summary */}
-          <div className=" flex flex-col items-center py-5">
+          <div className="flex flex-col items-center py-5">
             <button
               className=" bg-red-500 text-white tracking-wider px-3 py-1 rounded-md block max-w-xs "
               onClick={() => handleClearCart()}
