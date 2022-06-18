@@ -87,6 +87,12 @@ export const shoppingCartSlice = createSlice({
 
       localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
     },
+    getTotalPrice(state,action) => {
+      state.shoppingCart.reduce(()=> {}, {
+        total: 0,
+        quantity: 0,
+      })
+    }
   },
 });
 
