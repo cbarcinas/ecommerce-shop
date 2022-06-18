@@ -91,16 +91,25 @@ export const shoppingCartSlice = createSlice({
       // WHAT'S HAPPENING ?
       // This reduce method has to params, 1st is our callback fn and second
       // is our initial value which is an object containing total, quantity.
-
       let { total, quantity } = state.shoppingCart.reduce(
+        // This callback accepts 2 params
+        // The accumulator (cartTotal), which holds our {} containing total, quantity.
+        // (cartItem) which will be the item we are getting each time we iterate through our shoppingCart state.
         (cartTotal, cartItem) => {
+          // Destructure from cartItem
           const { price, cartQuantity } = cartItem;
+          // Get total price for each item being iterated by multiplying the cartItem's price & quantity.
           const itemTotal = price * cartQuantity;
 
+          // We are taking the cartTotal, which we set to 0 in our initial{} and adding the itemTotal.
+          // Each time an item is iterated, our inital{} will update and add each item's quantity and total.
+          // The inital{} will now reflect the total price and quantity of each item in our state shoppingCart array.
           cartTotal.total += itemTotal;
           cartTotal.quantity += cartQuantity;
 
           return cartTotal;
+          // Since we know that we need to access {total, quantity} from this reduce method, we can
+          // store this entire method in a var and destructure these two keys.
         },
         {
           total: 0,
