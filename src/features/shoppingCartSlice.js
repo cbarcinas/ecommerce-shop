@@ -87,14 +87,27 @@ export const shoppingCartSlice = createSlice({
 
       localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
     },
-    getTotalPrice(state,action) => {
-      // cartTotal is our accumulator and cartItem comes from iteration   
-      // of shoppingCart that our reduce method is accessing
-      state.shoppingCart.reduce((cartTotal, cartItem)=> {}, {
-        total: 0,
-        quantity: 0,
-      })
-    }
+    getTotalPrice(state, action) {
+      // WHAT'S HAPPENING ?
+      // This reduce method has to params, 1st is our callback fn and second
+      // is our initial value which is an object containing total, quantity.
+
+      let { total, quantity } = state.shoppingCart.reduce(
+        (cartTotal, cartItem) => {
+          const { price, cartQuantity } = cartItem;
+          const itemTotal = price * cartQuantity;
+
+          cartTotal.total += itemTotal;
+          cartTotal.quantity += cartQuantity;
+
+          return cartTotal;
+        },
+        {
+          total: 0,
+          quantity: 0,
+        }
+      );
+    },
   },
 });
 
