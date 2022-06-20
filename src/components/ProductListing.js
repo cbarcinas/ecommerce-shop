@@ -30,7 +30,7 @@ const ProductListing = () => {
   }, []);
 
   return (
-    <div className="max-w-[1440px] mx-auto my-24 auto-rows-auto sm:grid sm:gap-6 sm:gap-y-14 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="max-w-[1440px] mx-auto my-24 auto-rows-auto sm:grid sm:gap-x-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <ProductComponent />
     </div>
   );
