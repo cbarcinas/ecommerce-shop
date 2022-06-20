@@ -121,7 +121,7 @@ export const shoppingCartSlice = createSlice({
 });
 
 // export actions
-export const { addToCart, removeFromCart, decrementItemCount, clearCart } =
+export const { addToCart, removeFromCart, decrementItemCount, clearCart, getTotalPrice } =
   shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
