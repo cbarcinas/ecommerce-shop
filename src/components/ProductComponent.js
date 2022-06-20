@@ -19,7 +19,10 @@ const ProductComponent = () => {
   const renderList = products.map((product) => {
     const { id, title, image, price } = product;
     return (
-      <div key={id} className="container max-w-xs h-full m-auto rounded-lg shadow-2xl">
+      <div
+        key={id}
+        className="container max-w-xs h-full m-auto rounded-lg shadow-2xl"
+      >
         <div className="mx-5 p-5 md:mx-1 md:p-3">
           <div>
             <img
@@ -28,13 +31,15 @@ const ProductComponent = () => {
               alt={title}
             />
           </div>
-          <div className="text-center text-md">
-            <p className="leading-4 font-semibold tracking-wide">{title}</p>
-            <p className="font-semibold italic tracking-wider">${price}</p>
-            <div className="flex justify-center">
+          <div className="bg-red-500 text-md text-center h-1/2 flex flex-col">
+            <div>
+              <p className="leading-4 font-semibold tracking-wide">{title}</p>
+              <p className="font-semibold italic tracking-wider">${price}</p>
+            </div>
+            <div className="py-2 px-3 flex justify-center">
               {/* useParams will grab id in <ProductDetails/> comp */}
               <Link to={`/product/${id}`}>
-                <button className="mt-3 mr-4 text-md font-semibold text-white  py-2 px-3 tracking-wider bg-purple-400 hover:bg-purple-500 border-b-4 border-purple-300  hover:border-purple-500 rounded cursor-pointer">
+                <button className="mt-3 mr-4 text-md font-semibold text-white py-2 px-3 tracking-wider bg-purple-400 hover:bg-purple-500 border-b-4 border-purple-300  hover:border-purple-500 rounded cursor-pointer">
                   View
                 </button>
               </Link>
