@@ -27,10 +27,10 @@ const ProductListing = () => {
   // Create our useEffect to run our fetchProducts() async func
   useEffect(() => {
     fetchProducts();
-  },[]);
+  }, []);
 
   return (
-    <div className="max-w-[1440px] mx-auto my-8 auto-rows-auto sm:grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="max-w-[1440px] mx-auto my-24 auto-rows-auto sm:grid gap-6 gap-y-14 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       <ProductComponent />
     </div>
   );
