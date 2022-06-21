@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { MenuIcon } from "@heroicons/react/outline";
 import { ShoppingBagIcon } from "@heroicons/react/outline";
 
@@ -9,7 +10,9 @@ const Header = () => {
   // Set state for hamburger menu visibility
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  // change state of hamburger menu visibility
+  const {cartTotalQuantity} = useSelector((state) => state.cart)
+
+  // Change state of hamburger menu visibility
   const toggle = () => {
     setToggleMenu(!toggleMenu);
   };
@@ -21,6 +24,9 @@ const Header = () => {
           <h2 className="text-2xl font-semibold">Ecomm</h2>
         </Link>
         <div className="flex">
+          <div>
+            <span>{cartTotalQuantity}</span>
+          </div>
           <Link to="/cart">
             <ShoppingBagIcon className="w-8 items-center cursor-pointer"></ShoppingBagIcon>
           </Link>
