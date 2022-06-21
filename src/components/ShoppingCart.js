@@ -36,30 +36,26 @@ function ShoppingCart() {
     dispatch(clearCart());
   };
 
-  // console.log("cart AFTER page load: ", shoppingCart);
-
   return (
     <>
       {cart.shoppingCart.length === 0 ? (
         <>
           <div className="absolute">
             <div className="h-screen w-screen flex justify-center items-center text-center">
-              <Link to="/">
-                <div className="cursor-pointer">
-                  <p className="text-xl text-left">oops,</p>
-                  <h1 className="text-4xl">your cart is empty</h1>
-                  <Link to="/">
-                    <h2 className="text-2xl underline">shop now</h2>
-                  </Link>
-                </div>
-              </Link>
+              <div className="cursor-pointer">
+                <p className="text-xl text-left">oops,</p>
+                <h1 className="text-4xl">your cart is empty</h1>
+                <Link to="/">
+                  <h2 className="text-2xl underline">shop now</h2>
+                </Link>
+              </div>
             </div>
           </div>
         </>
       ) : (
-        <div className=" bg-slate-300 w-screen absolute">
-          <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" />
-          <h2 className="mt-12 mb-10 text-2xl tracking-wide text-center">
+        <div className="w-screen mt-[3.5em] ">
+          {/* <XIcon className="w-9 absolute top-4 right-4 cursor-pointer" /> */}
+          <h2 className="mt-20 text-2xl tracking-wide text-center">
             Shopping Cart
           </h2>
 
@@ -121,10 +117,13 @@ function ShoppingCart() {
             </button>
             <div className="flex flex-col mt-5">
               <div className="flex text-xl">
-                <span className="flex-1">Subtotal</span>
-                <span>${cart.cartTotalAmount}</span>
+                <span>Subtotal</span>
+                <span className="ml-1">({cart.cartTotalQuantity} items):</span>
+                <span className="flex-1 text-right ml-3">
+                  ${cart.cartTotalAmount}
+                </span>
               </div>
-              <p className="mb-5 text-xs tracking-wide text-gray-600">
+              <p className="my-2 text-xs tracking-wide text-gray-600">
                 Taxes and Shipping calculated at checkout
               </p>
               <button className="px-12 py-2 items-center bg-blue-500 text-white text-xl tracking-wider cursor-pointer rounded-md ">
@@ -134,7 +133,9 @@ function ShoppingCart() {
                 <p className="mt-5 text-xs tracking-wide text-gray-600">
                   Not quite ready to checkout ?
                 </p>
-                <Link to="/">Continue Shopping</Link>
+                <Link to="/" className="cursor-pointer">
+                  Continue Shopping
+                </Link>
               </div>
             </div>
           </div>
