@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { XIcon } from "@heroicons/react/outline";
 import { TrashIcon } from "@heroicons/react/outline";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,15 +7,17 @@ import {
   removeFromCart,
   addToCart,
   decrementItemCount,
+  getTotalPrice,
   clearCart,
 } from "../features/shoppingCartSlice";
 
 function ShoppingCart() {
   const cart = useSelector((state) => state.cart);
-  console.log("shopping cart :", cart);
   const dispatch = useDispatch();
 
-  const { shoppingCart } = cart;
+  useEffect(() => {
+    dispatch(getTotalPrice());
+  }, [cart]);
 
   const handleDecrementCount = (item) => {
     dispatch(decrementItemCount(item));
@@ -38,7 +40,7 @@ function ShoppingCart() {
 
   return (
     <>
-      {shoppingCart.length === 0 ? (
+      {cart.shoppingCart.length === 0 ? (
         <>
           <div className="absolute">
             <div className="h-screen w-screen flex justify-center items-center text-center">
@@ -62,7 +64,7 @@ function ShoppingCart() {
           </h2>
 
           <div>
-            {shoppingCart.map((cartItem) => {
+            {cart.shoppingCart.map((cartItem) => {
               const { id, title, image, price, cartQuantity } = cartItem;
               return (
                 <div
@@ -120,7 +122,7 @@ function ShoppingCart() {
             <div className="flex flex-col mt-5">
               <div className="flex text-xl">
                 <span className="flex-1">Subtotal</span>
-                <span>$19.99</span>
+                <span>${cart.cartTotalAmount}</span>
               </div>
               <p className="mb-5 text-xs tracking-wide text-gray-600">
                 Taxes and Shipping calculated at checkout
