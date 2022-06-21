@@ -11,7 +11,7 @@ export const shoppingCartSlice = createSlice({
       ? JSON.parse(localStorage.getItem("shoppingCart"))
       : [],
     cartTotalQuantity: 0,
-    cartTotalPrice: 0,
+    cartTotalAmount: 0,
   },
   reducers: {
     addToCart: (state, action) => {
@@ -116,12 +116,23 @@ export const shoppingCartSlice = createSlice({
           quantity: 0,
         }
       );
+
+      // parse decimal of subtotal
+      state.cartTotalAmount = total;
+      state.cartTotalQuantity = quantity;
+
+      console.log(quantity)
     },
   },
 });
 
 // export actions
-export const { addToCart, removeFromCart, decrementItemCount, clearCart, getTotalPrice } =
-  shoppingCartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  decrementItemCount,
+  clearCart,
+  getTotalPrice,
+} = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
