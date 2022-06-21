@@ -36,7 +36,6 @@ export const shoppingCartSlice = createSlice({
         state.shoppingCart.push(tempProd);
         toast.success(`${action.payload.title} added to cart`);
       }
-      // console.log(action.payload);
 
       // Once we have added the items to state,
       // we can add the shopping cart to local storage
@@ -81,13 +80,13 @@ export const shoppingCartSlice = createSlice({
         toast.error(`${action.payload.title} removed from cart`);
       }
     },
-    clearCart: (state, action) => {
+    clearCart: (state) => {
       state.shoppingCart = [];
-      toast.error(`Bag Cleared`);
+      toast.error(`Bag emptied`);
 
       localStorage.setItem("shoppingCart", JSON.stringify(state.shoppingCart));
     },
-    getTotalPrice(state, action) {
+    getTotalPrice(state) {
       // WHAT'S HAPPENING ?
       // This reduce method has to params, 1st is our callback fn and second
       // is our initial value which is an object containing total, quantity.
@@ -117,16 +116,15 @@ export const shoppingCartSlice = createSlice({
         }
       );
 
-      // parse decimal of subtotal
+      // Parse decimal of subtotal to avoid long digits
+      total = parseFloat(total.toFixed(2));
       state.cartTotalAmount = total;
       state.cartTotalQuantity = quantity;
-
-      console.log(quantity)
     },
   },
 });
 
-// export actions
+// Export actions
 export const {
   addToCart,
   removeFromCart,
