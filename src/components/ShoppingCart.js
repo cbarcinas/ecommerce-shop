@@ -17,7 +17,7 @@ function ShoppingCart() {
 
   useEffect(() => {
     dispatch(getTotalPrice());
-  }, [cart]);
+  }, [cart,dispatch]);
 
   const handleDecrementCount = (item) => {
     dispatch(decrementItemCount(item));
