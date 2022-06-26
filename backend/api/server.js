@@ -14,3 +14,5 @@ server.use(express.json());
 server.get("/", (req, res) => {
   res.json({ message: "im watching" });
 });
+
+module.exports = server;
