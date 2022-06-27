@@ -4,7 +4,7 @@ const products = [
     name: "Nike Red Vintage",
     brand: "Nike",
     description: "red crewneck",
-    category: "top",
+    category: "outerwear",
     price: 119.99,
     image: [
       "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319078/nike-red-crewneck-001.jpg_uzsilq.png",
@@ -46,7 +46,7 @@ const products = [
     name: "Supreme Cards",
     brand: "Supreme",
     description: "cards graphic tee",
-    category: "top",
+    category: "tee",
     price: 90.99,
     image: [
       "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319077/supreme-cards-001.jpg_mftg9w.png",
@@ -57,7 +57,7 @@ const products = [
     name: "Supreme Chicken Dinner",
     brand: "Supreme",
     description: "chicken dinner graphic tee",
-    category: "top",
+    category: "tee",
     price: 59.5,
     image: [
       "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319079/supreme-chicken-dinner-001.jpg_dtsjy7.png",
@@ -69,7 +69,7 @@ const products = [
     name: "Supreme Fire",
     brand: "Supreme",
     description: "fire graphic tee",
-    category: "top",
+    category: "tee",
     price: 78.9,
     image: [
       "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319077/supreme-fire-001.jpg_d4pwtd.png",
@@ -81,7 +81,7 @@ const products = [
     name: "Supreme Blue Box Logo Hat",
     brand: "Supreme",
     description: "blue box logo hat",
-    category: "headwear",
+    category: "hat",
     price: 62.92,
     image: [
       "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656318959/supreme-hat-blue-001.jpg_cyhnxb.png",
@@ -95,7 +95,7 @@ const products = [
     name: "Supreme Plaid Box Logo Hat",
     brand: "Supreme",
     description: "plaid box logo hat",
-    category: "headwear",
+    category: "hat",
     price: 79.99,
     image: [
       "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319060/supreme-hat-plaid-001.jpg_upledc.png",
@@ -108,7 +108,7 @@ const products = [
     name: "Supreme Life Sucks Die Tee",
     brand: "Supreme",
     description: "life sucks die tee",
-    category: "top",
+    category: "tee",
     price: 99.99,
     image: [
       "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319056/supreme-life-sucks-die-001.jpg_u9wqdc.png",
@@ -118,10 +118,53 @@ const products = [
   },
   {
     id: 10,
-    name: "",
+    name: "Supreme Teal Tee",
     brand: "Supreme",
-    description: "",
+    description: "teal embroidered logo tee",
+    category: "tee",
     price: 52.99,
-    image: [],
+    image: [
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319061/supreme-teal-emboridery-001.jpg_ksjonb.png",
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319057/supreme-teal-emboridery-002.jpg_xrda9b.png",
+    ],
+  },
+  {
+    id: 11,
+    name: "Supreme Teal Button Up w/ Hood",
+    brand: "Supreme",
+    description: "teal button up / white hood /checker plaid",
+    category: "outerwear",
+    price: 220,
+    image: [
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319058/supreme-teal-hood-outerwear-001.jpg_pgl0ai.png",
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319058/supreme-teal-hood-outerwear-002.jpg_afdumo.png",
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319059/supreme-teal-hood-outerwear-003.jpg_eelcm2.png",
+    ],
+  },
+  {
+    id: 12,
+    name: "Supreme Turtle Neck",
+    brand: "Supreme",
+    description: "black soft turtle neck ",
+    category: "outerwear",
+    price: 320,
+    image: [
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319058/supreme-world-famous-turtleneck-001.jpg_m2spob.png",
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319058/supreme-world-famous-turtleneck-002.jpg_mvmw6p.png",
+    ],
+  },
+  {
+    id: 13,
+    name: "Supreme Yellow Longsleeve",
+    brand: "Supreme",
+    description: "yellow longsleeve",
+    category: "outerwear",
+    price: 144.99,
+    image: [
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319059/supreme-yellow-line-001.jpg_bidj4r.png",
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319059/supreme-yellow-line-002.jpg_ldobw3.png",
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319059/supreme-yellow-line-003.jpg_e3ny9e.png",
+      "https://res.cloudinary.com/dwf0scg0g/image/upload/v1656319060/supreme-yellow-line-004.jpg_wvk3gw.png",
+    ],
   },
 ];
