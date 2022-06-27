@@ -1,6 +1,8 @@
+require("dotenv").config();
+
 const server = require("./api/server");
 
-const port = process.env.PORT || 5000;
+const connection_string = process.env.connection_string || 5000;
 
 // Setup server listener
 server.listen(port, () => {
