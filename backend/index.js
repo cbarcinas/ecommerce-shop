@@ -10,11 +10,13 @@ server.listen(port, () => {
   console.log(`\n*** Sever running on port ${port} ***\n`);
 });
 
-// To avoid dupolication errors, we can add a second param to 
+// To avoid dupolication errors, we can add a second param to
 // connect method in order to handle any errors
 mongoose
-  .connect(connection_string,{
-    useNewURL
+  .connect(connection_string, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
   })
   .then(() => console.log("MongoDB connection established..."))
   .catch((err) => console.error("MonggoDB connection failed:", err.message));
