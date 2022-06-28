@@ -4,8 +4,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const server = express();
 
-
-// import routes and global middleware
+// Import routes and global middleware
 
 server.use(express.json());
 server.use(helmet());
