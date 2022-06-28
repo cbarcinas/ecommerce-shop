@@ -3,11 +3,11 @@ require("dotenv").config();
 const server = require("./api/server");
 const mongoose = require("mongoose");
 
-const connection_string = process.env.connection_string || 5000;
+const connection_string = process.env.CONNECTION_STRING;
 
 // Setup server listener
-server.listen(port, () => {
-  console.log(`\n*** Sever running on port ${port} ***\n`);
+server.listen(5000, () => {
+  console.log(`Sever running on port 5000`);
 });
 
 // To avoid dupolication errors, we can add a second param to
@@ -15,8 +15,7 @@ server.listen(port, () => {
 mongoose
   .connect(connection_string, {
     useNewUrlParser: true,
-    useCreateIndex: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log("MongoDB connection established..."))
-  .catch((err) => console.error("MonggoDB connection failed:", err.message));
+  .catch((err) => console.error("MongoDB connection failed:", err.message));
